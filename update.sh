@@ -14,7 +14,7 @@ if [ -d /opt/discover/.git ]; then
 else
      rm -rf /opt/scripts/
      echo -e "\e[1;33mInstalling scripts into new location: /opt/discover/.\e[0m"
-     git clone git://github.com/leebaird/discover.git /opt/discover
+     git clone https://github.com/Oweoqi/discover.git /opt/discover
      echo
 fi
 
