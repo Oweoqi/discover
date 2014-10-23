@@ -1,7 +1,6 @@
-Formerly BackTrack scripts. For use with Kali Linux. Custom bash scripts used to automate various pentesting tasks.
+An attempt to port the legendary discover scripts to Arch. For use with Arch Linux. Custom bash scripts used to automate various pentesting tasks.
 
 ### Download, setup & usage
-* If using Kali mini ```apt-get install windows-binaries```
 * git clone git://github.com/leebaird/discover.git /opt/discover/
 * All scripts must be ran from this location.
 * cd /opt/discover/
@@ -147,20 +146,4 @@ Parse XML to CSV for use with /discover/misc/worksheet.xlsx.
 
 ### Update
 
-* Use to update Kali Linux, Discover scripts, various tools and the locate database.
-
-# CONTRIBUTING
-## Submitting Pull Requests
-When submitting pull requests (PR), please do the following:
-
-- When you submit a PR, a discription of what it is your PR does.
-- Test all senarios for your patch. For example, what happens if a user does not run a required step. Will it break something?
-- Create a ```topic branch``` to work on instead of working directly on the ```master```.
-- Always keep the branch you are working on in sync with upstream branch to avoid conflicts.
-- Include code comments so your code can be easily understood. 
-
-## Bug Fixes
-
-- Include reproducing steps to show the bug with terminal output.
-- Explain how your patch fixes the bug.
-
+* Use to update Arch Linux, Discover scripts, various tools and the locate database.
