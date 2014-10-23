@@ -18,6 +18,7 @@
 # Robert Clowser - all things
 # Saviour Emmanuel - convert nmap xlm to csv
 # Steve Copland - report framework design
+# Anthony Cozamanis - Arch linux port
 
 ##############################################################################################################
 
@@ -552,33 +553,33 @@ s/UKRAINE/Ukraine/g; s/UNITED KINGDOM/United Kingdom/g; s/UNITED STATES/United S
 
      f_runlocally
 
-     xdg-open images.google.com &
+     xdg-open 'https://www.images.google.com' &
      sleep 4
-     xdg-open arin.net &
+     xdg-open 'https://www.arin.net' &
      sleep 1
-     xdg-open toolbar.netcraft.com/site_report?url=http://www.$domain &
+     xdg-open 'https://www.toolbar.netcraft.com/site_report?url=http://www.$domain' &
      sleep 1
-     xdg-open shodanhq.com/search?q=$domain &
+     xdg-open 'https://www.shodanhq.com/search?q=$domain' &
      sleep 1
-     xdg-open connect.data.com/login/ &
+     xdg-open 'https://www.connect.data.com/login/' &
      sleep 1
-     xdg-open pastebin.com/ &
+     xdg-open 'https://www.pastebin.com/' &
      sleep 1
-     xdg-open google.com/#q=filetype%3Axls+OR+filetype%3Axlsx+site%3A$domain &
+     xdg-open 'https://www.google.com/#q=filetype%3Axls+OR+filetype%3Axlsx+site%3A$domain' &
      sleep 1
-     xdg-open google.com/#q=filetype%3Appt+OR+filetype%3Apptx+site%3A$domain &
+     xdg-open 'https://www.google.com/#q=filetype%3Appt+OR+filetype%3Apptx+site%3A$domain' &
      sleep 1
-     xdg-open google.com/#q=filetype%3Adoc+OR+filetype%3Adocx+site%3A$domain &
+     xdg-open 'https://www.google.com/#q=filetype%3Adoc+OR+filetype%3Adocx+site%3A$domain' &
      sleep 1
-     xdg-open google.com/#q=filetype%3Apdf+site%3A$domain &
+     xdg-open 'https://www.google.com/#q=filetype%3Apdf+site%3A$domain' &
      sleep 1
-     xdg-open google.com/#q=filetype%3Atxt+site%3A$domain &
+     xdg-open 'https://www.google.com/#q=filetype%3Atxt+site%3A$domain' &
      sleep 1
-     xdg-open http://www.urlvoid.com/scan/$domain &
+     xdg-open 'http://www.urlvoid.com/scan/$domain' &
      sleep 1
-     xdg-open sec.gov/edgar/searchedgar/companysearch.html &
+     xdg-open 'https://www.sec.gov/edgar/searchedgar/companysearch.html' &
      sleep 1
-     xdg-open reuters.com/finance/stocks
+     xdg-open 'https://www.reuters.com/finance/stocks'
      echo
      echo
      exit
@@ -818,7 +819,7 @@ s/UKRAINE/Ukraine/g; s/UNITED KINGDOM/United Kingdom/g; s/UNITED STATES/United S
      echo
      echo
 
-     firefox /$user/data/$domain/index.htm &
+     xdg-open '/$user/data/$domain/index.htm' &
      exit
      ;;
 
@@ -852,23 +853,21 @@ if [ -z $lastName ]; then
      f_error
 fi
 
-firefox &
+xdg-open 'http://www.411.com/name/$firstName-$lastName/' &
 sleep 2
-xdg-open http://www.411.com/name/$firstName-$lastName/ &
+xdg-open 'http://www.advancedbackgroundchecks.com/search/searchpreview.aspx?type=&fn=$firstName&mi=&ln=$lastName&age=&city=&state='
 sleep 1
-xdg-open http://www.advancedbackgroundchecks.com/search/searchpreview.aspx?type=&fn=$firstName&mi=&ln=$lastName&age=&city=&state=
+xdg-open 'http://www.cvgadget.com/person/$firstName/$lastName' &
 sleep 1
-xdg-open http://www.cvgadget.com/person/$firstName/$lastName &
+xdg-open 'http://www.peekyou.com/$fireName_$lastName' &
 sleep 1
-xdg-open http://www.peekyou.com/$fireName_$lastName &
+xdg-open 'http://phonenumbers.addresses.com/people/$firstName+$lastName' &
 sleep 1
-xdg-open http://phonenumbers.addresses.com/people/$firstName+$lastName &
+xdg-open 'https://pipl.com/search/?q=$firstName+$lastName&l=&sloc=&in=10' &
 sleep 1
-xdg-open https://pipl.com/search/?q=$firstName+$lastName&l=&sloc=&in=10 &
+xdg-open 'http://www.spokeo.com/search?q=$firstName+$lastName&s3=t24' &
 sleep 1
-xdg-open http://www.spokeo.com/search?q=$firstName+$lastName&s3=t24 &
-sleep 1
-xdg-open http://www.zabasearch.com/query1_zaba.php?sname=$firstName%20$lastName&state=ALL&ref=$ref&se=$se&doby=&city=&name_style=1&tm=&tmr=
+xdg-open 'http://www.zabasearch.com/query1_zaba.php?sname=$firstName%20$lastName&state=ALL&ref=$ref&se=$se&doby=&city=&name_style=1&tm=&tmr='
 
 f_main
 }
@@ -2867,7 +2866,7 @@ f_runlocally
 clear
 f_banner
 
-echo -e "\e[1;34mOpen multiple tabs in Iceweasel with:\e[0m"
+echo -e "\e[1;34mOpen multiple tabs in the default browser with:\e[0m"
 echo
 echo "1.  List"
 echo "2.  Directories from a domain's robot.txt."
@@ -2883,17 +2882,14 @@ case $choice in
      echo -n "Use SSL? (y/N) "
      read ssl
 
-     firefox &
-     sleep 2
-
      if [ -z $ssl ]; then
           for i in $(cat $location); do
-               xdg-open $i &
-               sleep 1
+               xdg-open '$i' &
+               sleep 2
           done
      elif [ "$ssl" == "y" ]; then
           for i in $(cat $location); do
-               xdg-open https://$i &
+               xdg-open 'https://$i' &
                sleep 1
           done
      else
@@ -3567,16 +3563,16 @@ else
 
   echo "Launching the browser, opening $number tabs, please wait..."
 
-  processname='iceweasel'
+  processname='xdg-open'
   if ps ax | grep -v grep | grep $processname > /dev/null; then
         echo ""
   else
-        /usr/bin/iceweasel &
+        /usr/bin/xdg-open &
 	sleep 4
   fi
 
   while read -r line; do
-	/usr/bin/iceweasel -new-tab "https://www.sslshopper.com/ssl-checker.html#hostname=$line" &
+	/usr/bin/xdg-open "https://www.sslshopper.com/ssl-checker.html#hostname=$line" &
 	sleep 1
   done < "$location"
 
