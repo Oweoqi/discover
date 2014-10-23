@@ -1,7 +1,7 @@
-An attempt to port the legendary discover scripts to Arch. For use with Arch Linux. Custom bash scripts used to automate various pentesting tasks.
+An attempt to port the legendary discover scripts to Arch. Custom bash scripts used to automate various pentesting tasks.
 
 ### Download, setup & usage
-* git clone git://github.com/leebaird/discover.git /opt/discover/
+* git clone https://github.com/Oweoqi/discover.git /opt/discover/
 * All scripts must be ran from this location.
 * cd /opt/discover/
 * ./setup.sh
