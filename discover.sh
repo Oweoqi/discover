@@ -2916,12 +2916,9 @@ case $choice in
      grep 'Disallow' robots.txt | awk '{print $2}' > /$user/data/$domain-robots.txt
      rm robots.txt
 
-     firefox &
-     sleep 2
-
      for i in $(cat /$user/data/$domain-robots.txt); do
-          xdg-open $domain$i &
-          sleep 1
+          xdg-open '$domain$i' &
+          sleep 2
      done
 
      echo
