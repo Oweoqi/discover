@@ -552,35 +552,33 @@ s/UKRAINE/Ukraine/g; s/UNITED KINGDOM/United Kingdom/g; s/UNITED STATES/United S
 
      f_runlocally
 
-     firefox &
+     xdg-open images.google.com &
      sleep 4
-     firefox -new-tab images.google.com &
+     xdg-open arin.net &
      sleep 1
-     firefox -new-tab arin.net &
+     xdg-open toolbar.netcraft.com/site_report?url=http://www.$domain &
      sleep 1
-     firefox -new-tab toolbar.netcraft.com/site_report?url=http://www.$domain &
+     xdg-open shodanhq.com/search?q=$domain &
      sleep 1
-     firefox -new-tab shodanhq.com/search?q=$domain &
+     xdg-open connect.data.com/login/ &
      sleep 1
-     firefox -new-tab connect.data.com/login/ &
+     xdg-open pastebin.com/ &
      sleep 1
-     firefox -new-tab pastebin.com/ &
+     xdg-open google.com/#q=filetype%3Axls+OR+filetype%3Axlsx+site%3A$domain &
      sleep 1
-     firefox -new-tab google.com/#q=filetype%3Axls+OR+filetype%3Axlsx+site%3A$domain &
+     xdg-open google.com/#q=filetype%3Appt+OR+filetype%3Apptx+site%3A$domain &
      sleep 1
-     firefox -new-tab google.com/#q=filetype%3Appt+OR+filetype%3Apptx+site%3A$domain &
+     xdg-open google.com/#q=filetype%3Adoc+OR+filetype%3Adocx+site%3A$domain &
      sleep 1
-     firefox -new-tab google.com/#q=filetype%3Adoc+OR+filetype%3Adocx+site%3A$domain &
+     xdg-open google.com/#q=filetype%3Apdf+site%3A$domain &
      sleep 1
-     firefox -new-tab google.com/#q=filetype%3Apdf+site%3A$domain &
+     xdg-open google.com/#q=filetype%3Atxt+site%3A$domain &
      sleep 1
-     firefox -new-tab google.com/#q=filetype%3Atxt+site%3A$domain &
+     xdg-open http://www.urlvoid.com/scan/$domain &
      sleep 1
-     firefox -new-tab http://www.urlvoid.com/scan/$domain &
+     xdg-open sec.gov/edgar/searchedgar/companysearch.html &
      sleep 1
-     firefox -new-tab sec.gov/edgar/searchedgar/companysearch.html &
-     sleep 1
-     firefox -new-tab reuters.com/finance/stocks
+     xdg-open reuters.com/finance/stocks
      echo
      echo
      exit
@@ -856,21 +854,21 @@ fi
 
 firefox &
 sleep 2
-firefox -new-tab http://www.411.com/name/$firstName-$lastName/ &
+xdg-open http://www.411.com/name/$firstName-$lastName/ &
 sleep 1
-firefox -new-tab http://www.advancedbackgroundchecks.com/search/searchpreview.aspx?type=&fn=$firstName&mi=&ln=$lastName&age=&city=&state=
+xdg-open http://www.advancedbackgroundchecks.com/search/searchpreview.aspx?type=&fn=$firstName&mi=&ln=$lastName&age=&city=&state=
 sleep 1
-firefox -new-tab http://www.cvgadget.com/person/$firstName/$lastName &
+xdg-open http://www.cvgadget.com/person/$firstName/$lastName &
 sleep 1
-firefox -new-tab http://www.peekyou.com/$fireName_$lastName &
+xdg-open http://www.peekyou.com/$fireName_$lastName &
 sleep 1
-firefox -new-tab http://phonenumbers.addresses.com/people/$firstName+$lastName &
+xdg-open http://phonenumbers.addresses.com/people/$firstName+$lastName &
 sleep 1
-firefox -new-tab https://pipl.com/search/?q=$firstName+$lastName&l=&sloc=&in=10 &
+xdg-open https://pipl.com/search/?q=$firstName+$lastName&l=&sloc=&in=10 &
 sleep 1
-firefox -new-tab http://www.spokeo.com/search?q=$firstName+$lastName&s3=t24 &
+xdg-open http://www.spokeo.com/search?q=$firstName+$lastName&s3=t24 &
 sleep 1
-firefox -new-tab http://www.zabasearch.com/query1_zaba.php?sname=$firstName%20$lastName&state=ALL&ref=$ref&se=$se&doby=&city=&name_style=1&tm=&tmr=
+xdg-open http://www.zabasearch.com/query1_zaba.php?sname=$firstName%20$lastName&state=ALL&ref=$ref&se=$se&doby=&city=&name_style=1&tm=&tmr=
 
 f_main
 }
@@ -2890,12 +2888,12 @@ case $choice in
 
      if [ -z $ssl ]; then
           for i in $(cat $location); do
-               firefox -new-tab $i &
+               xdg-open $i &
                sleep 1
           done
      elif [ "$ssl" == "y" ]; then
           for i in $(cat $location); do
-               firefox -new-tab https://$i &
+               xdg-open https://$i &
                sleep 1
           done
      else
@@ -2926,7 +2924,7 @@ case $choice in
      sleep 2
 
      for i in $(cat /$user/data/$domain-robots.txt); do
-          firefox -new-tab $domain$i &
+          xdg-open $domain$i &
           sleep 1
      done
 
@@ -3778,7 +3776,7 @@ echo "6.  List"
 echo "7.  IP or domain"
 echo
 echo -e "\e[1;34mWEB\e[0m"
-echo "8.  Open multiple tabs in Iceweasel"
+echo "8.  Open multiple tabs in default browser"
 echo "9.  Nikto"
 echo "10. SSL"
 echo
