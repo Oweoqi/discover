@@ -4,7 +4,7 @@
 # Feel free to contact me via chat or email with any feedback or suggestions that you may have:
 # leebaird@gmail.com
 #
-# I'm in the process of totally rewriting this script in Python specifically for Kali.
+# I'm in the process of totally rewriting this script in Python specifically for Arch.
 # I'm brand new to Python, so please bare with me.
 #
 # Special thanks to the following people:
@@ -36,7 +36,7 @@ def banner():
      print
      print '______  ___ ______ ______  _____  _    _ ______  _____'
      print '|     \  |  |____  |      |     |  \  /  |_____ |____/'
-     print '|_____/ _|_ _____| |_____ |_____|   \/   |_____ |    \_Kali'
+     print '|_____/ _|_ _____| |_____ |_____|   \/   |_____ |    \_Arch'
      print
      print 'By Lee Baird'
      print

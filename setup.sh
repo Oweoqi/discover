@@ -15,13 +15,13 @@ echo -e "\e[1;33mInstalling Veil-evasion.\e[0m"
 apt-get -y --force-yes install veil-evasion
 echo
 echo -e "\e[1;33mInstalling Filezilla.\e[0m"
-apt-get -y install filezilla
+pacman -S filezilla
 echo
 echo -e "\e[1;33mInstalling gedit.\e[0m"
-apt-get -y install gedit
+pacman -S gedit
 echo
 echo -e "\e[1;33mInstalling xdotool.\e[0m"
-apt-get -y install xdotool
+pacman -S xdotool
 echo
 }
 

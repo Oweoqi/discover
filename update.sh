@@ -4,8 +4,8 @@ clear
 echo
 echo
 
-echo -e "\e[1;34mUpdating Kali.\e[0m"
-apt-get update ; apt-get -y upgrade ; apt-get -y dist-upgrade ; apt-get -y autoremove ; apt-get -y autoclean ; echo
+echo -e "\e[1;34mUpdating Arch.\e[0m"
+pacman -Syu ; pacman -Qdtq | pacman -Rs ; pacman -Scc  ; echo
 
 if [ -d /opt/discover/.git ]; then
      echo -e "\e[1;34mUpdating Discover scripts.\e[0m"
@@ -31,7 +31,7 @@ fi
 
 if [ ! -f /usr/bin/i586-mingw32msvc-c++ ]; then
      echo -e "\e[1;33mInstalling Ming C Compiler.\e[0m"
-     apt-get -y install mingw32
+     pacman -S mingw32
      echo
 fi
 
@@ -61,7 +61,7 @@ if [ -d /opt/veil/.git ]; then
      echo -e "\e[1;33mInstalling Veil-Evasion suite.\e[0m"
      unlink /usr/bin/veil
      rm -rf /opt/veil
-     apt-get -y install veil-evasion veil-catapult
+     pacman -S veil-evasion veil-catapult
      echo
 fi
 

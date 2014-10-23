@@ -8,7 +8,7 @@
 #
 # Ben Wood - regex master
 # Dave Klug - planning, testing and bug reports
-# Jay Townsend - conversion of discover.sh to Kali
+# Jay Townsend - conversion of discover.sh to Arch
 # Jason Arnold - planning original concept, author of ssl-check and co-author of crack-wifi
 # Eric Milam - total re-write using functions
 # Martin Bos - IDS evasion techniques

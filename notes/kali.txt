@@ -1,4 +1,4 @@
-Kali
+Arch
 
 
 # Download
@@ -31,8 +31,8 @@ Should take about 15 min to complete > Exit
 Set the computer BIOS to boot from USB before the hard drive.
 Insert the USB drive and boot the computer.
 When the UNetbootin menu appears > Live
-Kali Linux should boot to the desktop.
-Applications > Systems Tools > Install Kali Linux
+Arch Linux should boot to the desktop.
+Applications > Systems Tools > Install Arch Linux
 Select a language: English > Continue
 Select your location: United States > Continue
 Configure your keyboard: American English > Continue
@@ -100,7 +100,7 @@ Add folder: Scanners
 
 # Install Adobe Flash
 
-apt-get -y install flashplugin-nonfree
+pacman -S flashplugin-nonfree
 update-flashplugin-nonfree --install
 ------------------------------------------------------------------------------------------------------
 
@@ -122,7 +122,7 @@ Packages              apt-get install libpcsclite1 pcscd pcsc-tools
 DoD certificates      dodpki.c3pki.chamb.disa.mil/rootca.html
 CACKey                https://docs.google.com/file/d/0B8JoV2w_9hicRGQ0TFQ5UEpwSkE/edit?pli=1
 
-Attach CAC reader, insert CAC and verify Kali can read it.
+Attach CAC reader, insert CAC and verify Arch can read it.
 pcsc_scan
 
 Iceweasel > Edit > Preferences > Advanced > Security Devices > Load
@@ -277,7 +277,7 @@ sudo su
 passwd
 cd /root/
 apt-get install kali-linux-full
-apt-get update ; apt-get -y upgrade ; apt-get -y dist-upgrade
+pacman -Syu
 apt-get install arp-scan dnsrecon fierce git goofile lbd locate nbtscan netdiscover metasploit nikto nmap sslscan sslyze theharvester unzip urlcrazy whatweb whois zip
 
 git clone git://github.com/leebaird/discover.git /opt/scripts/
