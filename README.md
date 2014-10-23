@@ -1,4 +1,4 @@
-An attempt to port the legendary [[discover|https://github.com/leebaird/discover]] scripts to Arch. Custom bash scripts used to automate various pentesting tasks.
+An attempt to port the legendary [discover](https://github.com/leebaird/discover) scripts to Arch. Custom bash scripts used to automate various pentesting tasks.
 
 ### Download, setup & usage
 * git clone https://github.com/Oweoqi/discover.git /opt/discover/
