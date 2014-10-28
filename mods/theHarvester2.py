@@ -8,7 +8,8 @@ import re
 import getopt
 
 # Modified by Matt Banick (Bourne_SC)
-# Ver 1.6.15
+# Amendments by Anthony Cozamanis
+# Ver 1.6.16
 
 global word
 global w
@@ -24,17 +25,17 @@ files = []
 
 def usage():
 
- print "Usage: theHarvester2.py options \n"
- print "   -d: Domain to search or company name"
- print "   -b: Data source (all,123people,ask,bing,google,linkedin,login,yahoo)"
- print "   -s: Start in result number X (default 0)"
- print "   -v: Verify host name via dns resolution"
- print "   -l: Limit the number of results to work with(bing goes from 50 to 50 results,"
- print "            google 100 to 100, and pgp does'nt use this option)"
- print "\nExample: theHarvester2.py -d microsoft.com -l 500 -b google"
- print ""
- print "Note: Yahoo will ban your IP temporarily if you use this or any scraping program too much or too often."
- print ""
+ print("Usage: theHarvester2.py options \n")
+ print("   -d: Domain to search or company name")
+ print("   -b: Data source (all,123people,ask,bing,google,linkedin,login,yahoo)")
+ print("   -s: Start in result number X (default 0)")
+ print("   -v: Verify host name via dns resolution")
+ print("   -l: Limit the number of results to work with(bing goes from 50 to 50 results,")
+ print("            google 100 to 100, and pgp does'nt use this option)")
+ print("\nExample: theHarvester2.py -d microsoft.com -l 500 -b google")
+ print("")
+ print("Note: Yahoo will ban your IP temporarily if you use this or any scraping program too much or too often.")
+ print("")
 
 def ppl123(w, i):
 	
@@ -229,7 +230,7 @@ def test(argv):
 			engine = arg
 			if engine not in ("123people", "ask", "bing", "google", "linkedin", "login", "pgp", "all", "yahoo"):
 				usage()
-				print "Invalid search engine, try with: bing, google, linkedin, pgp, 123people, login, yahoo, all"
+				print("Invalid search engine, try with: bing, google, linkedin, pgp, 123people, login, yahoo, all")
 				sys.exit()
 		elif opt == '-o':
 			files.append(open(arg, 'w'))
@@ -243,18 +244,18 @@ def test(argv):
 		res,nexty,fi = run(word, 0, engine)
 		if res != []:
 			res.sort(key=str.lower)
-			print "\nEmails:"
-			print "============"
+			print("\nEmails:")
+			print("============")
 			for x in res:
-				print x
+				print(x)
 			if fi == []:
 				sys.exit()
 			fi.sort(key=str.lower)
-			print "\nNames:"
-			print "============"
+			print("\nNames:")
+			print("============")
 			for x in fi:
 				xr = x.lstrip('[')
-				print xr
+				print(xr)
 		sys.exit()
 	if engine == "all":
 		en = 'pgp'
@@ -318,38 +319,39 @@ def test(argv):
 				sys.exit()
 				
 	if resulthost != []:
-		print "\nHosts:"	
-		print "===================="
+		print("\nHosts:")	
+		print("====================")
 		resulthost.sort(key=str.lower)
 		for x in resulthost:
 			host= x.replace('3A','')
 			if verify == '1':
 				try:
 					g=gethostbyname(host)
-					print host + " ===> " + g
+					print(host + " ===> " + g)
 				except:
 					pass
 			else:
-				print host
+				print(host)
 	
 	if names != []:
-		print "\nNames: "
-		print "===================="
+		print("\nNames: ")
+		print("====================")
 		names.sort(key=str.lower)
 		for x in names:
-			print x
+			print(x)
 		
 	if result != []:
-		print "\nEmails:"
-		print "===================="
+		print("\nEmails:")
+		print("====================")
 		result.sort(key=str.lower)
 		for x in result:
 			x = re.sub('<li class="first">', '', x)
 			x = re.sub('</li>', '', x)
-			print x
+			print(x)
 	
 if __name__ == "__main__":
         try: test(sys.argv[1:])
 	except KeyboardInterrupt:
-		print "Search interrupted by user.."
+		print("Search interrupted by user..")
+
 
