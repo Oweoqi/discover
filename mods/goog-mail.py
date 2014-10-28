@@ -18,8 +18,8 @@ def StripTags(text):
                 finished = 0
     return text
 if len(sys.argv) != 2:
-        print "\nExtracts emails from Google results.\n"
-        print "\nUsage: ./goog-mail.py <domain>\n"
+        print("\nExtracts emails from Google results.\n")
+        print("\nUsage: ./goog-mail.py <domain>\n")
         sys.exit(1)
 
 domain_name=sys.argv[1]
@@ -38,7 +38,7 @@ try:
             uniq_emails=d.keys()
         page_counter = page_counter +10
 except IOError:
-    print "Cannot connect to Google Groups."+""
+    print("Cannot connect to Google Groups."+"")
     
 page_counter_web=0
 try:
@@ -55,6 +55,7 @@ try:
         page_counter_web = page_counter_web +10
         
 except IOError:
-    print "Cannot connect to Google Web."+""
+    print("Cannot connect to Google Web."+"")
 for uniq_emails_web in d.keys():
-    print uniq_emails_web+""
+    print(uniq_emails_web+"")
+
